@@ -1,1 +1,19 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <a class="navbar-brand" [routerLink]="''">Geet</a>
+    <button class="navbar-toggler" type="button" (click)="isHeaderCollapsed = !isHeaderCollapsed" [attr.aria-expanded]="!isHeaderCollapsed" aria-controls="navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" [collapse]="isHeaderCollapsed" [isAnimated]="true">
+        <ul class="navbar-nav">
+            <li (click)="isHeaderCollapsed = true" class="nav-item cursor-pointer" [routerLink]="''" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li (click)="isHeaderCollapsed = true" class="nav-item cursor-pointer" [routerLink]="'/not-found'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <a class="nav-link">404</a>
+            </li>
+            <!-- <li (click)="isHeaderCollapsed = true" class="nav-item cursor-pointer">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li> -->
+        </ul>
+    </div>
+</nav>

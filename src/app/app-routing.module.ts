@@ -5,11 +5,11 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./views/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./views/home/home.module').then(m => m.HomeModule),
   },
   {
     path: 'not-found',
-    loadChildren: () => import('./views/not-found/not-found.module').then(m => m.NotFoundModule)
+    loadChildren: () => import('./views/not-found/not-found.module').then(m => m.NotFoundModule),
   },
   {
     path: '**',
