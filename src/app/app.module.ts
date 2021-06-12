@@ -10,7 +10,9 @@ import { LayoutModule } from './common/layout.module';
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { HttpClientModule } from "@angular/common/http";
 import { environment } from '../environments/environment';
+import { LoaderComponent } from './generic/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    HttpClientModule,
     CollapseModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./views/not-found/not-found.module').then(m => m.NotFoundModule),
   },
   {
+    path: 'employees',
+    loadChildren: () => import('./views/emp-data/emp-data.module').then(m => m.EmpDataModule),
+  },
+  {
     path: '**',
     redirectTo: '/not-found'
   }

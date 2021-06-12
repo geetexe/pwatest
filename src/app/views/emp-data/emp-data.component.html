@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>Employees</h1>
+            <ng-container *ngIf="!loading else showLoader">
+                <ul>
+                    <li *ngFor="let emp of empList;">
+                        {{emp?.title}}
+                    </li>
+                </ul>
+            </ng-container>
+        </div>
+    </div>
+</div>
+<ng-template #showLoader>
+    <loader></loader>
+</ng-template>
