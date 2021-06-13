@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SwUpdate } from '@angular/service-worker';
 import { fader } from './route-animations';
 import { UpdateService } from './services/update.service';
 

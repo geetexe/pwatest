@@ -12,7 +12,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HttpClientModule } from "@angular/common/http";
 import { environment } from '../environments/environment';
-import { LoaderComponent } from './generic/loader/loader.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { LoaderComponent } from './generic/loader/loader.component';
     LayoutModule,
     HttpClientModule,
     CollapseModule.forRoot(),
+    ToastrModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
