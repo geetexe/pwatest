@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
 import { fader } from './route-animations';
+import { UpdateService } from './services/update.service';
 
 @Component({
   selector: 'app-root',
@@ -11,23 +12,11 @@ import { fader } from './route-animations';
 })
 export class AppComponent {
 
-  constructor(private update: SwUpdate){
-    this.updateClient();
+  constructor(private sw: UpdateService){
+    this.sw.checkForUpdates();
   }
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData;
-  }
-
-  updateClient(){
-    if(!this.update.isEnabled){
-      console.log("update is not enabled!");
-    }
-    this.update.available.subscribe(
-      event => {
-        console.log(`current> ${event?.current}`);
-        console.log(`available> ${event?.available}`);
-      }
-    )
   }
 }
