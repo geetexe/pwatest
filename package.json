@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start-pwa": "ng build --prod && http-server -p 8080 -c-1 dist/pwatest"
+    "pwa": "ng build --prod && http-server -p 8080 dist/pwatest -o"
   },
   "private": true,
   "dependencies": {
